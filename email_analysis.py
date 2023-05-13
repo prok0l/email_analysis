@@ -4,14 +4,14 @@ from fnmatch import fnmatch
 class Email:
     def __init__(self, mail):
         self.original_mail = mail
-        self.mail_short = mail
+        self.short_mail = mail
 
     @property
-    def mail_short(self):
+    def short_mail(self):
         return self.__mail
 
-    @mail_short.setter
-    def mail_short(self, value):
+    @short_mail.setter
+    def short_mail(self, value):
         if not fnmatch(value, "*@*.*"):
             raise ValueError("Хуёвый email")
         if value.split("@")[-1] == "googlemail.com":
@@ -23,4 +23,4 @@ class Email:
 
 
 a = Email("a.b.c+test@googlemail.com")
-print(a.original_mail, "\t\t", a.mail_short)
+print(a.original_mail, "\t\t", a.short_mail)
