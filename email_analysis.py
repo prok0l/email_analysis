@@ -13,7 +13,7 @@ class Email:
     @short_mail.setter
     def short_mail(self, value):
         if not fnmatch(value, "*@*.*"):
-            raise ValueError("Хуёвый email")
+            raise ValueError("Bad email")
         if value.split("@")[-1] == "googlemail.com":
             value = value.split("@")[0] + "@" + "gmail.com"
         if "gmail" in value:
@@ -21,6 +21,9 @@ class Email:
         value = value.split("@")[0].split("+")[0] + "@" + value.split("@")[-1]
         self.__mail = value
 
+    def __repr__(self):
+        return self.short_mail
 
 a = Email("a.b.c+test@googlemail.com")
+print(a)
 print(a.original_mail, "\t\t", a.short_mail)
