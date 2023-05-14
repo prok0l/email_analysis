@@ -24,6 +24,8 @@ class Email:
     def __repr__(self):
         return self.short_mail
 
-a = Email("a.b.c+test@googlemail.com")
-print(a)
-print(a.original_mail, "\t\t", a.short_mail)
+
+if __name__ == "__main__":
+    a = Email("a.b.c+test@googlemail.com")
+    print(a)
+    print(a.original_mail, "\t\t", a.short_mail)
