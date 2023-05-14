@@ -11,3 +11,7 @@
 _Источник: https://t.me/naebnet_
 
 Данный скрипт позволяет создавать объект Email, передавая в инициализатор email в виде строки (str). На выход получать original_mail и short_mail.
+
+https://pypi.org/project/email-analysis/0.0/
+
+    pip install email_analysis
